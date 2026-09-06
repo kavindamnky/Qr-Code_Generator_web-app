@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Aldrich&display=swap');
+
+body {
+    background-color: #303238;
+}
+
+.container {
+    width: 400px;
+    padding: 25px 35px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    border-radius: 10px;
+}
+
+.container p {
+    font-weight: 600;
+    font-size: 15px;
+    margin-bottom: 8px;
+    font-family: "Aldrich", sans-serif;
+}
+
+.container input {
+    width: 100%;
+    height: 20px;
+    border: 1px solid #494eea;
+    outline: 0;
+    padding: 10px;
+    margin: 10px 0 20px;
+    border-radius: 5px;
+    font-family: "Aldrich", sans-serif;
+}
+
+.container button {
+    width: 100%;
+    height: 50px;
+    background: #494eea;
+    color: #fff;
+    border: 0;
+    outline: 0;
+    border-radius: 5px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    margin: 20px 0;
+    font-weight: 500;
+    font-family: "Aldrich", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container button i {
+    margin-right: 10px; /* Space between the icon and text */
+}
+
+#imgbox {
+    width: 200px;
+    border-radius: 5px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-in-out; /* Smooth transition */
+}
+
+#imgbox img {
+    width: 100%;
+    padding: 10px;
+}
+
+#imgbox.show-img {
+    max-height: 300px;
+    margin: 10px auto;
+    border: 1px solid #d1d1d1;
+}
+
+#downloadBtn {
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+    display: block;
+    color: #28a745;
+}
+
+#downloadBtn i {
+    font-size: 30px;
+    color: #28a745;
+    cursor: pointer;
+}
