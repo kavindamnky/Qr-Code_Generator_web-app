@@ -41,6 +41,8 @@
 - 🕒 **Saved History**: Auto-saves generated codes to browser `localStorage` for instant re-editing.
 - 📷 **Integrated QR Scanner**: Upload an image or use your device camera to decode any QR code.
 - 🛡️ **100% Client-Side Privacy**: No external APIs or tracking. Your data never leaves your device.
+- 💰 **Google AdSense Ready**: Built-in `<AdBanner />` component, automated script injection, and `public/ads.txt`.
+- 📜 **Privacy & Cookie Policy**: Accessible footer modal satisfying Google AdSense compliance requirements.
 
 ---
 
@@ -61,6 +63,22 @@ npm run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) in your browser to start generating QR codes!
+
+### Google AdSense Setup (Optional)
+
+1. Copy `.env.local.example` to `.env.local`:
+   ```bash
+   cp .env.local.example .env.local
+   ```
+2. Add your AdSense Publisher ID:
+   ```env
+   NEXT_PUBLIC_ADSENSE_CLIENT_ID=ca-pub-XXXXXXXXXXXXXXXX
+   NEXT_PUBLIC_ADSENSE_SLOT_BANNER=1234567890
+   ```
+3. Update `public/ads.txt` with your publisher ID:
+   ```text
+   google.com, pub-XXXXXXXXXXXXXXXX, DIRECT, f08c47fec0942fa0
+   ```
 
 ### Production Build
 
