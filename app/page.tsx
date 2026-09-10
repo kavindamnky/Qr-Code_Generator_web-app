@@ -20,6 +20,7 @@ import { CustomizationAccordion } from '@/components/CustomizationAccordion';
 import { QRPreview } from '@/components/QRPreview';
 import { HistoryDrawer } from '@/components/HistoryDrawer';
 import { QRScannerModal } from '@/components/QRScannerModal';
+import { AdBanner } from '@/components/AdBanner';
 import { Footer } from '@/components/Footer';
 import { Sparkles } from 'lucide-react';
 
@@ -365,6 +366,11 @@ export default function HomePage() {
           </div>
         </div>
       </main>
+
+      {/* AdSense Leaderboard Unit */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+        <AdBanner />
+      </div>
 
       {/* History Drawer Modal */}
       <HistoryDrawer

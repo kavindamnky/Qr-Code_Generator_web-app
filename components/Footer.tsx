@@ -1,9 +1,12 @@
 'use client';
 
-import React from 'react';
-import { ShieldCheck, Heart, Sparkles } from 'lucide-react';
+import React, { useState } from 'react';
+import { ShieldCheck, Heart, Sparkles, FileText } from 'lucide-react';
+import { PrivacyPolicyModal } from './PrivacyPolicyModal';
 
 export const Footer: React.FC = () => {
+  const [isPrivacyOpen, setIsPrivacyOpen] = useState(false);
+
   return (
     <footer className="bg-slate-900 text-slate-400 py-12 border-t border-slate-800 mt-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
@@ -34,6 +37,14 @@ export const Footer: React.FC = () => {
               Your Wi-Fi passwords, contact cards, and private links are never stored or transmitted
               to any third-party server.
             </p>
+            <div>
+              <button
+                onClick={() => setIsPrivacyOpen(true)}
+                className="inline-flex items-center text-xs font-semibold text-brand-400 hover:text-brand-300 underline underline-offset-4 transition-colors"
+              >
+                <FileText className="w-3.5 h-3.5 mr-1" /> View Privacy & Cookie Policy
+              </button>
+            </div>
           </div>
 
           {/* Credits & Origin */}
@@ -51,7 +62,16 @@ export const Footer: React.FC = () => {
 
         {/* Bottom copyright line */}
         <div className="flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 space-y-3 sm:space-y-0">
-          <p>© {new Date().getFullYear()} M"Builds Studios. All Rights Reserved.</p>
+          <div className="flex flex-wrap items-center gap-4">
+            <p>© {new Date().getFullYear()} M"Builds Studios. All Rights Reserved.</p>
+            <span>•</span>
+            <button
+              onClick={() => setIsPrivacyOpen(true)}
+              className="hover:text-slate-400 transition-colors"
+            >
+              Privacy Policy
+            </button>
+          </div>
           <div className="flex items-center space-x-1">
             <span>Crafted with</span>
             <Heart className="w-3.5 h-3.5 text-red-500 fill-red-500 inline mx-0.5" />
@@ -59,6 +79,8 @@ export const Footer: React.FC = () => {
           </div>
         </div>
       </div>
+
+      <PrivacyPolicyModal isOpen={isPrivacyOpen} onClose={() => setIsPrivacyOpen(false)} />
     </footer>
   );
 };
